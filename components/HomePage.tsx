@@ -4,7 +4,6 @@ import { Button } from "@nextui-org/react";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import NextLink from "next/link";
-import packageJSON from "package.json";
 import screenshot from "public/images/screenshot.png";
 import buyMeCofee from "public/images/yellow-button.png";
 import React from "react";
@@ -29,7 +28,6 @@ export default function HomePage() {
             <Promo />
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );
@@ -99,31 +97,5 @@ function Promo() {
         {data && <li>{data.slip.advice.replace(/\.$/, "")}</li>}
       </ul>
     </section>
-  );
-}
-
-function Footer() {
-  const githubURL = packageJSON.repository.replace(
-    /github:(.*).git/,
-    "https://github.com/$1"
-  );
-
-  return (
-    <footer>
-      <p>
-        For usage limits, terms and conditions, billing and charges, etc check
-        your OpenAI account. Use responsibly.
-      </p>
-      <p>
-        Created by{" "}
-        <a href="https://labnotes.org" target="_blank" rel="noreferrer">
-          Assaf Arkin
-        </a>{" "}
-        {" ❤️ "} ️
-        <a href={githubURL} target="_blank" rel="noreferrer">
-          Source Code
-        </a>
-      </p>
-    </footer>
   );
 }
