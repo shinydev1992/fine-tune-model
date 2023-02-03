@@ -48,10 +48,7 @@ export default function NewFineTuneForm() {
 
       const response = await fetch("https://api.openai.com/v1/fine-tunes", {
         method: "POST",
-        headers : {
-          'Authorization': 'Bearer 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',
-          'Content-type': 'application/json'
-        },
+        headers: { ...headers, "Content-Type": "application/json" },
         body: JSON.stringify({
           model,
           training_file: training,
