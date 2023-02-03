@@ -140,7 +140,7 @@ function DeleteFineTune({ id }: { id: string }) {
       if (window.confirm("Are you sure you want to delete this model?")) {
         await fetch(`https://api.openai.com/v1/models/${id}`, {
           method: "DELETE",
-          headers: { ...headers, "Content-Type": "application/json" },
+          headers,
         });
         await mutate("files");
       }

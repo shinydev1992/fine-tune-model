@@ -51,7 +51,7 @@ export default function CompletionForm({
     body: {
       model: values.model,
       prompt: values.prompt,
-      n: 3,
+      n: 1,
       temperature: +values.temperature,
       max_tokens: +values.max_tokens,
       presence_penalty: +values.presence_penalty,
